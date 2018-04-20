@@ -23,6 +23,8 @@ class Driver {
   }
 
 // Why do I have to use .map for this method vs. using .filter?
+// If I use .filter, then I will return an array of trip objects. I want to transform the array returned by grabbing
+//  the trip.passenger object.
   passengers() {
     return this.trips().map(trip => {
       return trip.passenger();
@@ -43,8 +45,7 @@ class Passenger {
       return trip.passengerId === this.id;
     });
   }
-
-// Why do I have to use .map for this method vs. using .filter?
+  
   drivers() {
     return this.trips().map(trip => {
       return trip.driver();
